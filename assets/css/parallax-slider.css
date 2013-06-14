@@ -16,7 +16,8 @@
 	position: relative;
 	margin: 0 auto;
 	overflow: hidden;
-	background: transparent url(../img/bg-wrapper.jpg) repeat 0% 0%;
+	/*background: transparent url(../img/bg-wrapper.jpg) repeat 0% 0%;*/
+	background-color: white;
 	-webkit-transition: background-position 1.4s ease-in-out 0.3s;
 	-moz-transition: background-position 1.4s ease-in-out 0.3s;
 	-o-transition: background-position 1.4s ease-in-out 0.3s;
@@ -61,7 +62,7 @@
 	opacity: 1;
 }
 .da-slide h2{
-	color: #fff;
+	color: #000;
 	text-shadow: 1px 1px 1px rgba(0,0,0,.35);
 	font-size: 66px;
 	line-height: 46px;
