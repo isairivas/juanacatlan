@@ -11,15 +11,18 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="#"> <span>J</span>uanacatlán</a>
+                    <a class="brand" href="#">
+                        <img src="assets/img/escudo.png">
+                        <span>J</span>uanacatlán
+                    </a>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
                             <li class="active"><a href="index.html">Inicio</a></li>
                             <li><a href="#">Gobierno</a></li>                                
-                            <li><a href="#">Contacto</a></li>
                             <li><a href="#">Transparencia</a></li>
                             <li><a href="#">Blog</a></li>
                             <li><a href="#">Eventos</a></li>
+                            <li><a href="#">Contacto</a></li>
                         </ul>
                     </div>
                 </div>
