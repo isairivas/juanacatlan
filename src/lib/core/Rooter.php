@@ -165,7 +165,7 @@ class Lib_Core_Rooter {
             case 404:
                 $error->code404();
                 break;
-            default: $error->desconocido(); break;
+            default: $error->desconocido($errorException); break;
         }
     }
     

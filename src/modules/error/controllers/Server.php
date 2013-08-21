@@ -25,9 +25,10 @@ class Module_Error_Controller_Server extends Lib_Mvc_Controller {
         dump($this->errorException->getMessage());
     }
     
-    public function desconocido(){
+    public function desconocido($errorException){
         Application::setRenderView(FALSE);
-        echo 'LO SENTIMOS ERROR DESCONOCIDO';
+        echo 'LO SENTIMOS ERROR DESCONOCIDO <br/>';
+        echo $errorException->getMessage();
     }
     
 }

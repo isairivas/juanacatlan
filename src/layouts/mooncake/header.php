@@ -4,15 +4,16 @@
             <div class="brand-wrap pull-left">
                 <div class="brand-img">
                     <a class="brand" href="#">
-                        <img src="assets/images/logo.png" alt="" style="width: 117px; height: 21px;">
+                        <img src="<?php echo HOME; ?>/assets/magnus/img/escudo.png" alt="" style="">
                     </a>
                 </div>
             </div>
-
+             
             <div id="header-right" class="clearfix">
                 <div id="nav-toggle" data-toggle="collapse" data-target="#navigation" class="collapsed">
                     <i class="icon-caret-down"></i>
                 </div>
+                <!--
                 <div id="header-search">
                     <span id="search-toggle" data-toggle="dropdown">
                         <i class="icon-search"></i>
@@ -21,7 +22,7 @@
                         <input type="text" class="search-query" placeholder="Search">
                     </form>
                 </div>
-               
+               -->
                   
 
                 <div id="header-functions" class="pull-right">

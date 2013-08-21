@@ -21,4 +21,4 @@
             <span><?php echo Application::get('view-subtitle'); ?></span>
         </h1>
     </div>
-<section class="main-content">
+<section id="main-content" class="main-content">

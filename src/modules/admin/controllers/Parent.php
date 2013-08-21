@@ -12,7 +12,7 @@ class Module_Admin_Controller_Parent extends Lib_Mvc_Controller {
     public function __construct() {
         parent::__construct();
         
-        $this->validSession();
+       // $this->validSession();
         $this->moduleConfigurations();
         $this->createMenu();
     }
@@ -38,12 +38,13 @@ class Module_Admin_Controller_Parent extends Lib_Mvc_Controller {
         $general->addChild(new Lib_View_Component_Menu('Home', '/admin', 'icol-application-home',true));
         
         $contenido = new Lib_View_Component_Menu('Contenidos','','icon-list');
-        $transparencia = new Lib_View_Component_Menu('Transparencia','','icon-list');
+        $transparencia = new Lib_View_Component_Menu('Transparencia','','icon-eye-open');
+        $transparencia->addChild(new Lib_View_Component_Menu('Archivos', '/admin/transparencia/', 'icol-doc-tag', true));
         
         
-        $conf = new Lib_View_Component_Menu('Opciones','/','icon-cogs',true);
+        $conf = new Lib_View_Component_Menu('Opciones','/','icon-cogs',false);
         $conf->addChild(new Lib_View_Component_Menu('Usuarios', '/admin/usuarios', 'icol-user-business-boss'));
-        $conf->addChild(new Lib_View_Component_Menu('Salir', '/admin/login/out', 'icol-disconnect',true));
+        $conf->addChild(new Lib_View_Component_Menu('Salir', '/admin/login/out', 'icol-disconnect',false));
         
         
         Application::set('__view-menu', array($general,$contenido,$transparencia,$conf));
@@ -70,5 +71,22 @@ class Module_Admin_Controller_Parent extends Lib_Mvc_Controller {
             $this->redirect(HOME.'/admin/security/login');
         }
     }
+    
+    protected function setMenuActive($padre,$hijo){
+        $menus = Application::get('__view-menu');
+        foreach ($menus as $Menu){
+            $Menu->setActive(false);
+            if($Menu->getName() == $padre ){
+                $Menu->setActive(true);
+            }
+            foreach($Menu->getChilds() as $sub ){
+                $sub->setActive(false);
+                if($Menu->getName() == $padre && $sub->getName() == $hijo ){
+                    $sub->setActive(true);
+                }
+            }
+        }
+    }
+    
 }
 
