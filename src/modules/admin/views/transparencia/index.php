@@ -23,8 +23,8 @@
                 <td><?php echo $registro['status']; ?></td>
                 <td class="action-col">
                     <span class="btn-group">
-                        <a href="<?php echo go($arrData['_name'],'edit',array($item['id'])); ?>" class="btn btn-small"><i class="icon-pencil"></i></a>
-                        <a onclick="return app.confirm('<?php echo go($arrData['_name'],'delete',array($item['id'])); ?>');" href="#" class="btn btn-small"><i class="icon-trash"></i></a>
+                        <a href="/admin/transparencia/edit?id=<?php echo $registro['id']; ?>" class="btn btn-small"><i class="icon-pencil"></i></a>
+                        <a onclick="return _appLib.alerts.confirm({url:'/admin/transparencia/delete?id=<?php echo $registro['id']; ?>'});" href="#" class="btn btn-small"><i class="icon-trash"></i></a>
                     </span>
                 </td>
             </tr>

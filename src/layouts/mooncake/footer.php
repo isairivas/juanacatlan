@@ -23,6 +23,7 @@
 
     <!-- Customizer, remove if not needed -->
     <script src="<?php echo HOME; ?>/assets/mooncake/js/customizer.js"></script>
+    <script src="<?php echo HOME; ?>/assets/mooncake/js/applib.js"></script>
 
     <!-- Uniform Script 
     <script src="<?php //echo HOME; ?>/assets/mooncake/uniform/jquery.uniform.min.js"></script>
@@ -57,13 +58,15 @@
     <!-- Full Calendar -->
     <script src="<?php echo HOME; ?>/assets/mooncake/plugins/fullcalendar/fullcalendar.min.js"></script>
     
+    <script src="<?php echo HOME; ?>/assets/mooncake/plugins/msgbox/jquery.msgbox.min.js"></script>
+    
     <!-- DataTables -->
     <script src="<?php echo HOME; ?>/assets/mooncake/plugins/datatables/jquery.dataTables.min.js"></script>
     <script src="<?php echo HOME; ?>/assets/mooncake/plugins/datatables/TableTools/js/TableTools.min.js"></script>
     <script src="<?php echo HOME; ?>/assets/mooncake/plugins/datatables/dataTables.bootstrap.js"></script>
     
     <!-- Demo Scripts -->
-    <script src="<?php echo HOME; ?>/assets/mooncake//js/demo/dashboard.js"></script>
+    <script src="<?php echo HOME; ?>/assets/mooncake/js/demo/dashboard.js"></script>
 
 </body>
 

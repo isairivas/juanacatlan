@@ -109,6 +109,7 @@ class  Lib_Db_AbstractTable {
 			return false;
 		}
 	}
+        
 	public function delete($where){
 		
 		$strQuery = " DELETE FROM {$this->_name} WHERE {$where} ";

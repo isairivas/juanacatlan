@@ -1,4 +1,5 @@
 <?php
+
 /**
  * 
  * Proyect Name: mini-linker-core
@@ -10,9 +11,19 @@
  * 
  * @author Uriel isai Rodriguez rivas <isairivas@gmail.com>
  * 
-*/
+ */
 class Lib_Core_Request {
-	function __construct() {
-	}
+
+    function __construct() {
+        
+    }
+
+    public function getPost(){
+        $params = array();
+        foreach($_POST as $name => $value){
+            $params[$name] = $value;
+        }
+        return $params;
+    }
 }
 

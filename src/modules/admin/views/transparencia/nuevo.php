@@ -1,4 +1,4 @@
-<?php $registro = isset($arrData['registro'])?$arrData['registro']:array('opcion_link' =>1,'status'=>1); ?>
+<?php $registro = isset($registro)?$registro:array('opcion_link' =>1,'status'=>1); ?>
 
 <div id="sidebar-separator"></div>
     <div id="main-content">
@@ -9,7 +9,7 @@
                     <span class="title"><i class="icon-resize-horizontal"></i> Ingresa los datos</span>
                 </div>
                 <div class="widget-content form-container">
-                    <form class="form-horizontal" action="/admin/transparencia/nuevo" method="post" enctype="multipart/form-data" >
+                    <form class="form-horizontal" action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" >
                         <?php if(isset($registro['id'])): ?>
                         <input type="hidden" name="registro[id]" id="id" value="<?php echo $registro['id']; ?>" />
                         <?php endif; ?>
@@ -19,7 +19,7 @@
                             <div class="controls">
                                 <select id="categoria" name="registro[categoria_transparencia_id]" class="span4 select2-select-00">
                                     <?php foreach($categorias as $categoria): ?>
-                                    <option  value="<?php echo $categoria['id']; ?>"><?php echo $categoria['nombre']; ?></option>
+                                    <option <?php echo $categoria['id'] == $registro['categoria_transparencia_id']?'selected="selected"':''; ?>  value="<?php echo $categoria['id']; ?>"><?php echo $categoria['nombre']; ?></option>
                                     <?php endforeach; ?>
                                 </select>
                             </div>

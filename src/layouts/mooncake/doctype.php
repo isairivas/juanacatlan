@@ -27,6 +27,8 @@
 <!-- iButton -->
 <link rel="stylesheet" href="<?php echo HOME; ?>/assets/mooncake/plugins/ibutton/jquery.ibutton.css" media="screen">
 
+<link rel="stylesheet" href="<?php echo HOME; ?>/assets/mooncake/plugins/msgbox/jquery.msgbox.css" media="screen">
+
 <!-- Circular Stat -->
 <link rel="stylesheet" href="<?php echo HOME; ?>/assets/mooncake/custom-plugins/circular-stat/circular-stat.css">
 
