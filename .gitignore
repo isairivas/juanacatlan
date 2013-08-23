@@ -2,3 +2,5 @@
 *.sublime-workspace
 /nbproject/private/
 /nbproject/
+/configs/application.config.php
+
