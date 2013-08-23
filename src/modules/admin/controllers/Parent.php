@@ -39,7 +39,7 @@ class Module_Admin_Controller_Parent extends Lib_Mvc_Controller {
         
         $contenido = new Lib_View_Component_Menu('Contenidos','','icon-list');
         $transparencia = new Lib_View_Component_Menu('Transparencia','','icon-eye-open');
-        $transparencia->addChild(new Lib_View_Component_Menu('Archivos', '/admin/transparencia/', 'icol-doc-tag', true));
+        $transparencia->addChild(new Lib_View_Component_Menu('Transparencia', '/admin/transparencia/', 'icol-doc-tag', true));
         
         
         $conf = new Lib_View_Component_Menu('Opciones','/','icon-cogs',false);

@@ -28,6 +28,5 @@ define('SHOW_DETAILS',false);
 
 /* Aqui deberan ponerse todas las configuraciones que necesite el proyecto */
 
-
-
-
+/* configuraciones del path para los archivos */
+define('PATH_UPLOADS_FILES_TRANSPARENCIA', PATH_APP . '/../uploads/transparencia/');
