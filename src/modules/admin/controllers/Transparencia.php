@@ -28,6 +28,10 @@ class Module_Admin_Controller_Transparencia extends Module_Admin_Controller_Pare
         Application::set('view-subtitle', 'Listado de registros');
         $model = new Model_Transparencia(); 
         $registros = $model->getAll();
+        $colores = array('','#C5E3E1','#E3EBDF','#F5F0CE','#F5CEDB','#cccccc');
+        foreach ($registros as $key => $registro){
+            $registros[$key]['color'] = $colores[$registro['categoria_transparencia_id']];
+        }
         $data = array(
             'registros' => $registros
         );
@@ -116,6 +120,9 @@ class Module_Admin_Controller_Transparencia extends Module_Admin_Controller_Pare
             $model = new Model_Transparencia();
             $nuevoRegistro = $_POST['registro'];
             $nuevoRegistro['updated_at'] = date('Y-m-d H:i:s');
+            if(!isset($nuevoRegistro['is_subcategoria'])){
+                $nuevoRegistro['is_subcategoria'] = 'FALSE';   
+            }
             $idEditar = $nuevoRegistro['id'];
             $file = $this->uploadsImages('archivo', $this->_pathUploadsFiles);
             if( !empty($file) ){

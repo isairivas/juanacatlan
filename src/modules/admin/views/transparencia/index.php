@@ -17,11 +17,15 @@
         </thead>
         <tbody>
             <?php foreach($registros as $registro): ?>
-            <tr>
-                <td><?php echo $registro['nombre']; ?></td>
-                <td><?php echo $registro['categoria'] ?></td>
-                <td><?php echo $registro['status']; ?></td>
-                <td class="action-col">
+            <tr >
+                <td style="background-color: <?php echo $registro['color']; ?>;" >
+                    <?php echo $registro['is_subcategoria']=='TRUE'?'<b>':''; ?>
+                    <?php echo $registro['nombre']; ?>
+                    <?php echo $registro['is_subcategoria']=='TRUE'?'</b>':''; ?>
+                </td>
+                <td style="background-color: <?php echo $registro['color']; ?>;"><?php echo $registro['categoria'] ?></td>
+                <td style="background-color: <?php echo $registro['color']; ?>;"><?php echo $registro['status']; ?></td>
+                <td class="action-col" style="background-color: <?php echo $registro['color']; ?>;">
                     <span class="btn-group">
                         <a href="/admin/transparencia/edit?id=<?php echo $registro['id']; ?>" class="btn btn-small"><i class="icon-pencil"></i></a>
                         <a onclick="return _appLib.alerts.confirm({url:'/admin/transparencia/delete?id=<?php echo $registro['id']; ?>'});" href="#" class="btn btn-small"><i class="icon-trash"></i></a>

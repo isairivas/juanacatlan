@@ -26,6 +26,15 @@
                         </div>
                         
                         <div class="control-group">
+                            <label class="control-label" for="nombre">Es Subcategoria</label>
+                            <div class="controls">
+                                <input type="checkbox" name="registro[is_subcategoria]" value="TRUE" <?php echo (isset($registro['is_subcategoria']) && $registro['is_subcategoria'] == 'TRUE' ) ?'checked="checked"':''; ?> />
+                                
+                                <p class="help-block"> </p>
+                            </div>
+                        </div>
+                        
+                        <div class="control-group">
                             <label class="control-label" for="nombre">Nombre</label>
                             <div class="controls">
                                 <input type="text"  class="span4" id="nombre" name="registro[nombre]" value="<?php echo isset($registro['nombre']) ? $registro['nombre'] : ''; ?>">

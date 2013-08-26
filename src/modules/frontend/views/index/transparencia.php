@@ -10,13 +10,17 @@
         <div id="wrapper">
         <div class="container">
             <div class="row offset1">
-                <h2><i class="ico-check"></i>Articulo 32</h2>
+                <h2><i class="ico-check"></i><?php echo $registros[0]['categoria']; ?></h2>
                 <div class="span8">
-                    <h4>I. La necesaria para el ejercicio del derecho a la información pública, que comprende:</h4>
-                    <ol class="ol-lower-alpha" style="list-style-type: lower-alpha;">
-                        <li>  La Ley de Información Pública del Estado;</li>
-                        <li>La Ley de Información Pública del Estado ssd;</li>
-                    </ol>
+                    <ul class="" style="">
+                    <?php foreach ($registros as $registro): ?>
+                       <?php if($registro['is_subcategoria'] == 'TRUE'): ?>
+                        <li><h4 style="font-weight: bold;color:#000;" ><?php echo $registro['nombre']; ?></h4></li>
+                     <?php else: ?>
+                        <li> <a target="_blank" href="<?php echo $registro['link_descarga']; ?>"> <?php echo $registro['nombre']; ?> </a> </li>
+                    <?php endif; ?>
+                    <?php endforeach; ?>
+                        </ul>
                 </div>
             </div>
         </div>
