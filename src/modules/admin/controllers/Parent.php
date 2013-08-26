@@ -12,7 +12,7 @@ class Module_Admin_Controller_Parent extends Lib_Mvc_Controller {
     public function __construct() {
         parent::__construct();
         
-       // $this->validSession();
+        $this->validSession();
         $this->moduleConfigurations();
         $this->createMenu();
     }
