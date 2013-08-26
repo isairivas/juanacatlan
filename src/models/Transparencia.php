@@ -8,6 +8,7 @@
 class Model_Transparencia extends Lib_Mvc_Model {
     public function __construct() {
         parent::__construct('transparencia', 'id');
+        
     }
     
     public function getAll(){

@@ -4,4 +4,5 @@ RewriteEngine on
 #RewriteCond %{REQUEST_FILENAME} -d
 #RewriteRule ^.*$ - [NC,L]
 RewriteCond %{REQUEST_URI} !assets/(.*)\.
+RewriteCond %{REQUEST_URI} !uploads/(.*)\.
 RewriteRule ^([^/]+).* index.php

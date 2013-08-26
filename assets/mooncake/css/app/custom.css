@@ -1,3 +1,4 @@
 #wrapper #main{ margin-left: 250px;}
 #main-content { color:#333; }
+#wrapper #main #main-content { width: 95%; }
 

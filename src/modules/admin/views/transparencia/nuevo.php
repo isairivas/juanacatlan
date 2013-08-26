@@ -1,4 +1,4 @@
-<?php $registro = isset($registro)?$registro:array('opcion_link' =>1,'status'=>1); ?>
+<?php $registro = isset($registro)?$registro:array('opcion_link' =>1,'status'=>1,'categoria_transparencia_id' => ''); ?>
 
 <div id="sidebar-separator"></div>
     <div id="main-content">

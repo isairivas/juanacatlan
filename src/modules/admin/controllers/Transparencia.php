@@ -7,6 +7,8 @@
  */
 class Module_Admin_Controller_Transparencia extends Module_Admin_Controller_Parent {
     
+    private $_pathUploadsFiles;
+    
     public function __construct() {
         parent::__construct();
         Application::set('view-title', 'Transparencia'); //agregar el titulo principal a la pagina
@@ -17,7 +19,8 @@ class Module_Admin_Controller_Transparencia extends Module_Admin_Controller_Pare
             'Transparencia' => '/admin/transparencia'
         );
         Application::set('navegation',$navegacion); //enviar la navegacion
-        parent::setMenuActive('Transparencia', 'Archivos'); // indicar cual es el menu que estara activo
+        parent::setMenuActive('Transparencia', 'Transparencia'); // indicar cual es el menu que estara activo
+        $this->_pathUploadsFiles = PATH_UPLOADS_FILES_TRANSPARENCIA;
     }
     
     public function index(){
@@ -52,6 +55,8 @@ class Module_Admin_Controller_Transparencia extends Module_Admin_Controller_Pare
             $model = new Model_Transparencia();
             $registro = $_POST['registro'];
             $registro['created_at'] = date('Y-m-d H:i:s');
+            $imagen = $this->uploadsImages('archivo', $this->_pathUploadsFiles);
+            $registro['archivo'] = $imagen;
             try{
                 $model->insert($registro);
             }catch(Exception $e){
@@ -112,6 +117,13 @@ class Module_Admin_Controller_Transparencia extends Module_Admin_Controller_Pare
             $nuevoRegistro = $_POST['registro'];
             $nuevoRegistro['updated_at'] = date('Y-m-d H:i:s');
             $idEditar = $nuevoRegistro['id'];
+            $file = $this->uploadsImages('archivo', $this->_pathUploadsFiles);
+            if( !empty($file) ){
+                /* eliminar antigua imagen */
+                $nuevoRegistro['archivo'] = $file;
+                $antiguoRegistro = $model->toArray($model->getByPrimary($idEditar));
+                @unlink($this->_pathUploadsFiles. $antiguoRegistro[0]['archivo'] );
+            }
             unset($nuevoRegistro['id']);
             try{
                 $model->update($nuevoRegistro, ' WHERE id = '.$idEditar);
@@ -119,6 +131,24 @@ class Module_Admin_Controller_Transparencia extends Module_Admin_Controller_Pare
             }
         }
         parent::redirect('/admin/transparencia');
+    }
+    
+     /**
+     * @name uploadsImages
+     * @description Sube las imagenes que se encuentren en el formulario al servidor
+     */
+    private function uploadsImages($nombreCampo,$path){
+        $serverImage = new Lib_Util_ServerImage();
+        $nombreImagen = '';
+        $extensiones = 'jpg,jpeg,png,bmp,gif,pdf,doc,docx,xls,xlsx,ppt,pptx,zip';
+        try{
+            $nombreImagen = $serverImage->upload('registro',$nombreCampo,$path,$extensiones);
+           }catch(Exception $e){
+               if($e->getCode() == 2 ){
+                   return '';
+               }
+           }
+           return $nombreImagen;
     }
     
 } // end class
