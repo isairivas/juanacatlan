@@ -49,7 +49,7 @@
 <![endif]-->
 
 <title>titulo</title>
-
+<script src="<?php echo HOME; ?>/assets/mooncake/js/libs/jquery-1.8.2.min.js"></script>
 </head>
 
 <body data-show-sidebar-toggle-button="true" data-fixed-sidebar="true">

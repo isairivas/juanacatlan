@@ -12,7 +12,14 @@
  * @author Uriel isai Rodriguez rivas <isairivas@gmail.com>
  * 
 */
-class String {
+class Lib_Util_String {
+    
+    public static function cleanTitle($title){
+        $title = str_replace(' ', '-', $title);
+        $title = str_replace('_', '-', $title);
+        $title = preg_replace("/[^a-zA-Z\-\-0-9]/", "",$title);
+        return $title;
+    }
     
 }
 

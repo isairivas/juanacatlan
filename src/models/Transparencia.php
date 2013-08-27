@@ -22,5 +22,22 @@ class Model_Transparencia extends Lib_Mvc_Model {
         return parent::toArray($result);
         
     }
+    
+    public function getByCategoria($categoriaId){
+        
+        if(!filter_var($categoriaId,FILTER_VALIDATE_INT) ){
+            return array();
+        }
+        
+        $sql = ' SELECT t.*, c.nombre AS categoria '
+             . ' FROM transparencia t '
+             . '    LEFT JOIN categorias_transparencia c ON t.categoria_transparencia_id = c.id '
+             . " WHERE t.categoria_transparencia_id = {$categoriaId} "
+             .' ; ';
+        
+        $db = parent::getDB();
+        $result = $db->query($sql);
+        return parent::toArray($result);
+    }
 }
 

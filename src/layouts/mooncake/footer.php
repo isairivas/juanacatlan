@@ -12,7 +12,7 @@
  </div>
 
     <!-- Core Scripts -->
-    <script src="<?php echo HOME; ?>/assets/mooncake/js/libs/jquery-1.8.2.min.js"></script>
+    
     <script src="<?php echo HOME; ?>/assets/mooncake/bootstrap/js/bootstrap.min.js"></script>
     <script src="<?php echo HOME; ?>/assets/mooncake/js/libs/jquery.placeholder.min.js"></script>
     <script src="<?php echo HOME; ?>/assets/mooncake/js/libs/jquery.mousewheel.min.js"></script>
@@ -67,6 +67,16 @@
     
     <!-- Demo Scripts -->
     <script src="<?php echo HOME; ?>/assets/mooncake/js/demo/dashboard.js"></script>
+ <script type="text/javascript" src="<?php echo HOME; ?>/assets/mooncake/custom-plugins/bootstrap-fileinput.min.js" ></script>
+            <!-- jquery-ui Scripts -->
+    <script src="<?php echo HOME; ?>/assets/mooncake/jui/js/jquery-ui-1.9.1.min.js"></script>
+    <script src="<?php echo HOME; ?>/assets/mooncake/jui/jquery-ui.custom.min.js"></script>
+
+    <script src="<?php echo HOME; ?>/assets/mooncake/jui/timepicker/jquery-ui-timepicker.min.js"></script>
+    <script src="<?php echo HOME; ?>/assets/mooncake/jui/jquery.ui.touch-punch.min.js"></script>
+    <script src="<?php echo HOME; ?>/assets/mooncake/jui/js/i18n/jquery.ui.datepicker-es.js"></script>
+    <script src="http://localhost/templates/mooncake/creative/plugins/zebradp/zebra_datepicker.min.js"></script>
+
 
 </body>
 
