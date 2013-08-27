@@ -38,6 +38,8 @@ class Module_Admin_Controller_Parent extends Lib_Mvc_Controller {
         $general->addChild(new Lib_View_Component_Menu('Home', '/admin', 'icol-application-home',true));
         
         $contenido = new Lib_View_Component_Menu('Contenidos','','icon-list');
+        $contenido->addChild(NEW Lib_View_Component_Menu('Noticias', '/admin/noticias', 'icol-newspaper'));
+        
         $transparencia = new Lib_View_Component_Menu('Transparencia','','icon-eye-open');
         $transparencia->addChild(new Lib_View_Component_Menu('Transparencia', '/admin/transparencia/', 'icol-doc-tag', true));
         
