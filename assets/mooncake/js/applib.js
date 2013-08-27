@@ -2,7 +2,7 @@ var _appLib = {};
 _appLib.alerts = {};
 
 $(document).ready( function () {
-    $("#input").cleditor(); 
+    $("#input").cleditor({ controls: "bold italic underline strikethrough | cut copy paste pastetext" })[0];
 });
 
 _appLib.alerts.confirm = function(options) {
