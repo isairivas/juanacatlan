@@ -1,5 +1,10 @@
 var _appLib = {};
 _appLib.alerts = {};
+
+$(document).ready( function () {
+    $("#input").cleditor(); 
+});
+
 _appLib.alerts.confirm = function(options) {
     var text = 'Esta seguro que desea eliminar el elemento seleccionado';
     var url = null;

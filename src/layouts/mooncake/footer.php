@@ -12,7 +12,6 @@
  </div>
 
     <!-- Core Scripts -->
-    
     <script src="<?php echo HOME; ?>/assets/mooncake/bootstrap/js/bootstrap.min.js"></script>
     <script src="<?php echo HOME; ?>/assets/mooncake/js/libs/jquery.placeholder.min.js"></script>
     <script src="<?php echo HOME; ?>/assets/mooncake/js/libs/jquery.mousewheel.min.js"></script>
@@ -64,11 +63,13 @@
     <script src="<?php echo HOME; ?>/assets/mooncake/plugins/datatables/jquery.dataTables.min.js"></script>
     <script src="<?php echo HOME; ?>/assets/mooncake/plugins/datatables/TableTools/js/TableTools.min.js"></script>
     <script src="<?php echo HOME; ?>/assets/mooncake/plugins/datatables/dataTables.bootstrap.js"></script>
+    <!-- CLEditor -->
+    <script src="<?php echo HOME; ?>/assets/mooncake/plugins/cleditor/jquery.cleditor.min.js"></script>
     
     <!-- Demo Scripts -->
     <script src="<?php echo HOME; ?>/assets/mooncake/js/demo/dashboard.js"></script>
- <script type="text/javascript" src="<?php echo HOME; ?>/assets/mooncake/custom-plugins/bootstrap-fileinput.min.js" ></script>
-            <!-- jquery-ui Scripts -->
+    <script type="text/javascript" src="<?php echo HOME; ?>/assets/mooncake/custom-plugins/bootstrap-fileinput.min.js" ></script>
+    <!-- jquery-ui Scripts -->
     <script src="<?php echo HOME; ?>/assets/mooncake/jui/js/jquery-ui-1.9.1.min.js"></script>
     <script src="<?php echo HOME; ?>/assets/mooncake/jui/jquery-ui.custom.min.js"></script>
 

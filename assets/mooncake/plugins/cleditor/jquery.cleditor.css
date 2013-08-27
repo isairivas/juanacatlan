@@ -1,23 +1,12 @@
-.cleditorMain {border:1px solid #ccc; background-color:#fff; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;}
+.cleditorMain {border:1px solid #999; padding:0 1px 1px; background-color:white}
 .cleditorMain iframe {border:none; margin:0; padding:0}
 .cleditorMain textarea {border:none; margin:0; padding:0; overflow-y:scroll; font:10pt Arial,Verdana; resize:none; outline:none /* webkit grip focus */}
-.cleditorToolbar
-{
-	background: #f8f8f8 repeat-x left bottom;
-	background-image: -moz-linear-gradient(top, #f8f8f8, #e8e8e8);
-	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f8f8f8), to(#e8e8e8));
-	background-image: -webkit-linear-gradient(top, #f8f8f8, #e8e8e8);
-	background-image: -o-linear-gradient(top, #f8f8f8, #e8e8e8);
-	background-image: linear-gradient(to bottom, #f8f8f8, #e8e8e8);
-	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#f8f8f8', endColorstr='#e8e8e8', GradientType=0);
-	
-	border-bottom: 1px solid #cdcdcd;
-}
+.cleditorToolbar {background: url('images/toolbar.gif') repeat}
 .cleditorGroup {float:left; height:26px}
-.cleditorButton {float:left; width:24px; height:24px; margin:1px 0 1px 0; background: url('images/buttons.png')}
+.cleditorButton {float:left; width:24px; height:24px; margin:1px 0 1px 0; background: url('images/buttons.gif')}
 .cleditorDisabled {opacity:0.3; filter:alpha(opacity=30)}
 .cleditorDivider {float:left; width:1px; height:23px; margin:1px 0 1px 0; background:#CCC}
-.cleditorPopup {border:solid 1px #999; background-color:white; position:absolute; font:10pt Arial,Verdana; cursor:default; z-index:10000}
+.cleditorPopup {border:solid 1px #999; background-color:white; color:#333333; position:absolute; font:10pt Arial,Verdana; cursor:default; z-index:10000}
 .cleditorList div {padding:2px 4px 2px 4px}
 .cleditorList p,
 .cleditorList h1,

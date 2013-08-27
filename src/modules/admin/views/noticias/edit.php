@@ -6,7 +6,7 @@
         <div class="row-fluid">
             <div class="span12 widget">
                 <div class="widget-header">
-                    <span class="title"><i class="icon-resize-horizontal"></i> Ingresa los datos</span>
+                    <span class="title"><i class="icon-edit"></i> Ingresa los datos</span>
                 </div>
                 <div class="widget-content form-container">
                     <form class="form-horizontal" action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" >
@@ -18,7 +18,7 @@
                         <div class="control-group">
                             <label class="control-label" for="titulo">Titulo</label>
                             <div class="controls">
-                                <input data-mask="(999)-999-999" type="text"  class="span4" id="titulo" name="registro[titulo]" value="<?php echo isset($registro['titulo']) ? $registro['titulo'] : ''; ?>">
+                                <input data-mask="(999)-999-999" type="text"  class="span9" id="titulo" name="registro[titulo]" value="<?php echo isset($registro['titulo']) ? $registro['titulo'] : ''; ?>">
                                 <p class="help-block">* El Titulo es obligatorio </p>
                             </div>
                         </div>
@@ -32,9 +32,9 @@
                         </div>
                         
                         <div class="control-group">
-                            <label class="control-label" for="contenido">Contenido </label>
+                            <label for="contenido">Contenido </label>
                             <div class="controls">
-                                <textarea  name="registro[contenido]" class="span12" id="contenido" rows="3"><?php echo isset($registro['contenido']) ? $registro['contenido'] : ''; ?></textarea>
+                               <textarea id="input" name="input" style="width: 100%; height: 250px;"></textarea>
                             </div>
                         </div>
                         

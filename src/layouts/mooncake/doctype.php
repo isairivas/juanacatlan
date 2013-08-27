@@ -36,6 +36,9 @@
 <link rel="stylesheet" href="<?php echo HOME; ?>/assets/mooncake/plugins/fullcalendar/fullcalendar.css" media="screen">
 <link rel="stylesheet" href="<?php echo HOME; ?>/assets/mooncake/plugins/fullcalendar/fullcalendar.print.css" media="print">
 
+<!-- CLEditor -->
+<link rel="stylesheet" href="<?php echo HOME; ?>/assets/mooncake/plugins/cleditor/jquery.cleditor.css" media="screen">
+
 <!-- End Plugin Stylesheets -->
 
 <!-- Main Layout Stylesheet -->
