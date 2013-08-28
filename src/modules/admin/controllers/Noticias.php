@@ -42,10 +42,35 @@ class Module_Admin_Controller_Noticias extends Module_Admin_Controller_Parent{
         Application::set('request', $request); 
     }
     
-    public function save(){
-        
+    public function save() {
+        Application::setRenderView(false);
+
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $data = $_POST['registro'];
+            $data['created_at'] = date('Y-m-d H:i:s');
+            $data['updated_at'] = date('Y-m-d H:i:s');
+            $data['fecha'] = date('Y-m-d', strtotime($data['fecha']));
+            $noticias = new Lib_Mvc_Model('noticias', 'id');
+            try {
+               $noticias->insert($data);    
+            } catch(Exception $e) {
+                //nada
+            }
+            parent::redirect('/admin/noticias');
+        }
     }
 
+    public function delete() {
+        Application::setRenderView(false);
+        if(isset($_GET['id']) && filter_var($_GET['id'],FILTER_VALIDATE_INT) ){
+            $id = $_GET['id'];
+            $model = new Lib_Mvc_Model('noticias', 'id');
+            try{
+               $model->deleteByPrimary($id);
+           }catch(Exception $e){ dump($e->getMessage()); }
+        }
+        parent::redirect('/admin/noticias'); 
+    }
 
     public function edit(){
         
