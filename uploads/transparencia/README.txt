@@ -1,0 +1,1 @@
+carpeta donde estaran los archivos de transparencia

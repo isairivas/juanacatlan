@@ -17,7 +17,7 @@
                        <?php if($registro['is_subcategoria'] == 'TRUE'): ?>
                         <li><h4 style="font-weight: bold;color:#000;" ><?php echo $registro['nombre']; ?></h4></li>
                      <?php else: ?>
-                        <li> <a target="_blank" href="<?php echo $registro['link_descarga']; ?>"> <?php echo $registro['nombre']; ?> </a> </li>
+                        <li style="padding-left: 20px;"> <a target="_blank" href="<?php echo $registro['link_descarga']; ?>"> <?php echo $registro['nombre']; ?> </a> </li>
                     <?php endif; ?>
                     <?php endforeach; ?>
                         </ul>

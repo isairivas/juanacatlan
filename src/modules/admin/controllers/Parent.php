@@ -37,19 +37,30 @@ class Module_Admin_Controller_Parent extends Lib_Mvc_Controller {
         $general = new Lib_View_Component_Menu('Home','/','icon-home',true);
         $general->addChild(new Lib_View_Component_Menu('Home', '/admin', 'icol-application-home',true));
         
-        $contenido = new Lib_View_Component_Menu('Contenidos','','icon-list');
+        $contenido = new Lib_View_Component_Menu('Contenidos','','icon-list',true);
         $contenido->addChild(NEW Lib_View_Component_Menu('Noticias', '/admin/noticias', 'icol-newspaper'));
+        $contenido->addChild(NEW Lib_View_Component_Menu('Calendario', '/admin/noticias', 'icol-calendar-2'));
         
-        $transparencia = new Lib_View_Component_Menu('Transparencia','','icon-eye-open');
-        $transparencia->addChild(new Lib_View_Component_Menu('Transparencia', '/admin/transparencia/', 'icol-doc-tag', true));
+        $transparencia = new Lib_View_Component_Menu('Transparencia','','icon-eye-open',true);
+        $transparencia->addChild(new Lib_View_Component_Menu('Transparencia', '/admin/transparencia/', 'icol-doc-tag'));
+        
+        $menus = array();
+        if(isset($_SESSION['linker_security'])){
+            switch($_SESSION['linker_security']['rol']){
+                case '1':
+                    $menus = array($contenido,$transparencia);
+                    break;
+                case '2':
+                    $menus = array($contenido);
+                    break;
+                case '3':
+                    $menus = array($transparencia);
+                    break;
+            }
+        }
         
         
-        $conf = new Lib_View_Component_Menu('Opciones','/','icon-cogs',false);
-        $conf->addChild(new Lib_View_Component_Menu('Usuarios', '/admin/usuarios', 'icol-user-business-boss'));
-        $conf->addChild(new Lib_View_Component_Menu('Salir', '/admin/login/out', 'icol-disconnect',false));
-        
-        
-        Application::set('__view-menu', array($general,$contenido,$transparencia,$conf));
+        Application::set('__view-menu', $menus);
     }
     
     private function validSession(){

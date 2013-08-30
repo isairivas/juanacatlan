@@ -1,4 +1,5 @@
 #wrapper #main{ margin-left: 250px;}
 #main-content { color:#333; }
 #wrapper #main #main-content { width: 95%; }
+.image-thumb-admin img { width: 100px;height: 100px; }
 

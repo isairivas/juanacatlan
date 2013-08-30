@@ -18,7 +18,7 @@
                         <div class="control-group">
                             <label class="control-label" for="titulo">Titulo</label>
                             <div class="controls">
-                                <input data-mask="(999)-999-999" type="text" autocomplete="off"  class="span9" id="titulo" name="registro[titulo]" value="<?php echo isset($registro['titulo']) ? $registro['titulo'] : ''; ?>">
+                                <input  type="text"   class="span9" id="titulo" name="registro[titulo]" value="<?php echo isset($registro['titulo']) ? $registro['titulo'] : ''; ?>">
                                 <p class="help-block">* El Titulo es obligatorio </p>
                             </div>
                         </div>
@@ -34,7 +34,7 @@
                         <div class="control-group">
                             <label for="contenido">Contenido </label>
                             <div class="controls">
-                               <textarea id="input" name="registro[contenido]" style="width: 100%; height: 250px;"></textarea>
+                                <textarea id="input" name="registro[contenido]" style="width: 100%; height: 250px;"><?php echo isset($registro['contenido'])?$registro['contenido']:''; ?></textarea>
                             </div>
                         </div>
                         
@@ -42,8 +42,8 @@
                         <div class="control-group">
                             <label class="control-label" for="imagen">Imagen</label>
                             <div class="controls">
-                                <?php if(isset($registro['imagen'])): ?>
-                                <div> <a href="<?php echo HOME; ?>/uploads/noticias/<?php echo $registro['imagen']; ?>" >Descargar</a></div>
+                                <?php if(isset($registro['imagen']) && !empty($registro['imagen']) ): ?>
+                                <div class="image-thumb-admin"> <img src="<?php echo HOME; ?>/uploads/noticias/<?php echo $registro['imagen']; ?>" /></div>
                                 <?php endif; ?>
                                 <input type="file" name="registro[imagen]" data-provide="fileinput" />
                                 <p class="help-block"> Tama&ntilde;o Maximo: 2 Mg </p>

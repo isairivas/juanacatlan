@@ -15,7 +15,7 @@ class Model_Transparencia extends Lib_Mvc_Model {
         $sql = ' SELECT t.*, c.nombre AS categoria '
              . ' FROM transparencia t '
              . '    LEFT JOIN categorias_transparencia c ON t.categoria_transparencia_id = c.id '
-             .' ; ';
+             .' ORDER BY t.id ; ';
         
         $db = parent::getDB();
         $result = $db->query($sql);
@@ -33,7 +33,7 @@ class Model_Transparencia extends Lib_Mvc_Model {
              . ' FROM transparencia t '
              . '    LEFT JOIN categorias_transparencia c ON t.categoria_transparencia_id = c.id '
              . " WHERE t.categoria_transparencia_id = {$categoriaId} "
-             .' ; ';
+             .' ORDER BY t.id  ; ';
         
         $db = parent::getDB();
         $result = $db->query($sql);

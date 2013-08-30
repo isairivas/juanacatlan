@@ -15,7 +15,7 @@
 /* Se incluye la clase que inicia todo el cotorreo */
 require_once 'src/Application.php';
 
- 
+
 /* clase principal donde se desencadena las acciones */
 $app = new Application();
 

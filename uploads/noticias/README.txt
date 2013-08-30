@@ -1,0 +1,1 @@
+carpeta donde estaran las imagenes de la snoticias

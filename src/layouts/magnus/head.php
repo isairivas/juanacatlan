@@ -20,7 +20,7 @@
 	<meta property="og:url" content=""/>
 	<meta property="og:image" content=""/>
 	<!-- end: Facebook Open Graph -->
-	<link rel="shortcut icon" href="<?php echo HOME; ?>/favicon.ico" />
+	<link rel="shortcut icon" href="<?php echo HOME; ?>/assets/favicon.ico" />
     <!-- start: CSS -->
     <link href="<?php echo HOME; ?>/assets/magnus/css/bootstrap.css" rel="stylesheet">
     <link href="<?php echo HOME; ?>/assets/magnus/css/bootstrap-responsive.css" rel="stylesheet">

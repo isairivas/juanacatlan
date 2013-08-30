@@ -23,7 +23,9 @@ class Module_Admin_Controller_Noticias extends Module_Admin_Controller_Parent{
     public function index(){
         $model = new Model_Noticias();
         $registros = $model->toArray($model->select(null,'fecha', 'DESC'));
-        
+        foreach ($registros as $key => $item){
+            $registros[$key]['fecha'] = date('d/m/Y', strtotime($item['fecha']));
+        }
         $data = array(
             'registros' => $registros
         );
@@ -47,15 +49,21 @@ class Module_Admin_Controller_Noticias extends Module_Admin_Controller_Parent{
 
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
             $data = $_POST['registro'];
-            $data['created_at'] = date('Y-m-d H:i:s');
-            $data['updated_at'] = date('Y-m-d H:i:s');
-            $data['fecha'] = date('Y-m-d', strtotime($data['fecha']));
-            $noticias = new Lib_Mvc_Model('noticias', 'id');
+            $noticias = new Model_Noticias();
+            $data['fecha'] = Lib_Util_Date::formatTo('Y-m-d', $data['fecha']);
+            $data['imagen'] = $noticias->uploadImagen();
+            
             try {
-               $noticias->insert($data);    
-            } catch(Exception $e) {
-                //nada
-            }
+                if( isset($data['id']) && is_numeric($data['id']) ){
+                    $data['updated_at'] = date('Y-m-d H:i:s');
+                    $data['imagen'] = $noticias->eliminaAntiguaImagen($data['imagen'], $data['id']);
+                    $noticias->update($data, 'where id = '.$data['id']);
+                } else {
+                    $data['created_at'] = date('Y-m-d H:i:s');
+                    $noticias->insert($data);
+                }
+                   
+            } catch(Exception $e) {}
             parent::redirect('/admin/noticias');
         }
     }
@@ -64,7 +72,8 @@ class Module_Admin_Controller_Noticias extends Module_Admin_Controller_Parent{
         Application::setRenderView(false);
         if(isset($_GET['id']) && filter_var($_GET['id'],FILTER_VALIDATE_INT) ){
             $id = $_GET['id'];
-            $model = new Lib_Mvc_Model('noticias', 'id');
+            $model = new Model_Noticias();
+            $model->eliminaAntiguaImagen('true', $id);
             try{
                $model->deleteByPrimary($id);
            }catch(Exception $e){ dump($e->getMessage()); }
@@ -73,7 +82,22 @@ class Module_Admin_Controller_Noticias extends Module_Admin_Controller_Parent{
     }
 
     public function edit(){
+        $id = null;
+        if(isset($_GET['id']) && filter_var($_GET['id'],FILTER_VALIDATE_INT) ){
+            $id = $_GET['id'];
+        } else {
+            parent::redirect('/admin/noticias');
+        }
         
+        $model = new Model_Noticias();
+        $registro = $model->toArray($model->getByPrimary($id));
+        $registro[0]['fecha'] = date('d/m/Y', strtotime($registro[0]['fecha']));
+        $data = array(
+            'action' => '/admin/noticias/save',
+            'registro' => $registro[0]
+        );
+        Application::$view->setData($data);
     }
+    
 }
 

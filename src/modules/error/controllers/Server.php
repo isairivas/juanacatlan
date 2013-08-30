@@ -11,6 +11,9 @@ class Module_Error_Controller_Server extends Lib_Mvc_Controller {
     public function __construct($errorException) {
         parent::__construct();
         $this->errorException = $errorException;
+        $categoriasDB = new Lib_Mvc_Model('categorias_transparencia','id');
+        $categorirasTransparencia = $categoriasDB->toArray($categoriasDB->get());
+        Application::set('categorias_transparencia', $categorirasTransparencia);
     }
     
     public function index(){
@@ -20,9 +23,10 @@ class Module_Error_Controller_Server extends Lib_Mvc_Controller {
 
     public function code404(){
         // metodo para hacer algo en caso de que no exista la peticion buscada
-        Application::setRenderView(FALSE);
-        echo 'LO SENTIMOS LA PAGINA BUSCADA NO EXISTE <br/>';
-        dump($this->errorException->getMessage());
+
+        $request = array('module' => 'error','controller' => 'Server', 'action' => 'code404');
+        Application::set('request', $request);
+        
     }
     
     public function desconocido($errorException){
