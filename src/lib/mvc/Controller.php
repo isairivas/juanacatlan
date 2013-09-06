@@ -29,6 +29,7 @@ class Lib_Mvc_Controller {
 			return false;
 		}
 	}
+	
 	protected function redirect($url){
 		if(!headers_sent()){
 			header('location: '.$url);

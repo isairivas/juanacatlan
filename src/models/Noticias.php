@@ -1,6 +1,4 @@
 <?php
-
-
 /**
  * Modelo para la snoticias
  *
@@ -34,6 +32,13 @@ class Model_Noticias extends Lib_Mvc_Model {
             $imagen = $fileName;
         }
         return $imagen;
+    }
+
+    public function getNews($from, $to) {
+       $sql = ' SELECT * FROM noticias WHERE id BETWEEN '.$from.' AND '. $to ;
+        $db = parent::getDB();
+        $result = $db->query($sql);
+        return parent::toArray($result);
     }
 }
 
