@@ -31,18 +31,26 @@ class Lib_Mvc_Model extends Lib_Db_AbstractTable {
 		return $data;
 	}
         
-        public function getByPrimary($id){
-            if(!filter_var($id,FILTER_VALIDATE_INT)){
-                throw new Exception('El valor debe ser entero');
-            }
-            return parent::select(' WHERE '.$this->_primary .' = '.$id );
+    public function getByPrimary($id){
+        if(!filter_var($id,FILTER_VALIDATE_INT)){
+            throw new Exception('El valor debe ser entero');
         }
-        public function deleteByPrimary($id){
-            if(!filter_var($id,FILTER_VALIDATE_INT)){
-                throw new Exception('El valor debe ser entero');
-            }
-            
-            parent::delete( $this->_primary .' = '.$id );
+        return parent::select(' WHERE '.$this->_primary .' = '.$id );
+    }
+
+    public function deleteByPrimary($id){
+        if(!filter_var($id,FILTER_VALIDATE_INT)){
+            throw new Exception('El valor debe ser entero');
         }
+        
+        parent::delete( $this->_primary .' = '.$id );
+    }
+
+    public function count() {
+    	$result = $this->select();
+    	return $result->rowCount();
+    }
+
+
 }
 

@@ -60,27 +60,6 @@ class Module_Frontend_Controller_Index extends Lib_Mvc_Controller {
         Application::$view->setData($data);
     }
 
-    public function noticias() {
-        Application::set('menu-active','4');
-        $params = explode('/', $_SERVER['REQUEST_URI']);
-        $pag = $params[2];
-        $model = new Model_Noticias();
-        /**
-        ** Hace un query de las noticias que se encuentren dentro de un rango de Ids
-        ** Ejemplo: si $pag == 2 entonces obtenemos las noticas con id entre 4 y 8.
-        **/
-        $news = $model->getNews( (($pag - 1) * 4) , ($pag * 4) );
-        $registros;
-        foreach ($news as $n) {
-            $cont = $n['contenido'];
-            //Reemplaza el contenido original con uno resumido.
-            $n['contenido'] = cutTextWithTags($cont);
-            $registros[] = $n;
-            
-        }
-        $data = array('registros' => $registros );
-        Application::$view->setData($data);
-    }
 
     public function download(){
         Application::setRenderView(false);

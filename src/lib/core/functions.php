@@ -99,7 +99,7 @@ function dump($mixed){
  * @param type Int $longitud
  * @return string
  */
-function cutTextWithTags($texto, $longitud = 180) {
+function cutTextWithTags($texto, $longitud = 500) {
     
     if (empty($texto) ) { 
     	return $texto; 

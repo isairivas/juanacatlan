@@ -123,4 +123,5 @@ class  Lib_Db_AbstractTable {
 	public function getDB(){
 		return $this->db;
 	}
+
 }

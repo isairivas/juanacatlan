@@ -34,8 +34,11 @@ class Model_Noticias extends Lib_Mvc_Model {
         return $imagen;
     }
 
-    public function getNews($from, $to) {
-       $sql = ' SELECT * FROM noticias WHERE id BETWEEN '.$from.' AND '. $to ;
+    public function getNews($pag) {
+        if($pag == 0){
+            $pag = 1;
+        }
+        $sql =  'SELECT * FROM '.$this->_name.' LIMIT '.($pag - 1).',4';
         $db = parent::getDB();
         $result = $db->query($sql);
         return parent::toArray($result);

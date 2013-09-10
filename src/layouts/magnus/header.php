@@ -27,7 +27,7 @@
                                     <?php endforeach; ?>
                                 </ul>
                             </li>
-                            <li class="<?php echo Application::get('menu-active') == '4' ? 'active' : ''; ?>"><a href="<?php echo HOME; ?>/noticias/1">Noticias</a></li>
+                            <li class="<?php echo Application::get('menu-active') == '4' ? 'active' : ''; ?>"><a href="<?php echo HOME; ?>/noticias/1">Gaceta</a></li>
                             <li><a href="#">Eventos</a></li>
                             <li><a href="#">Contacto</a></li>
                         </ul>
