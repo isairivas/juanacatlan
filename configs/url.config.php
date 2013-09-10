@@ -4,7 +4,8 @@ $urls = array(
     'contacto' => array('module' => 'frontend','controller' => 'Index', 'action' => 'contacto'),
     'transparencia' => array('module' => 'frontend','controller' => 'Index', 'action' => 'transparencia'),
     'home' => array('module' => 'frontend','controller' => 'Index', 'action' => 'index'),
-    'noticias' => array('module' => 'frontend','controller' => 'Noticias', 'action' => 'page'),
+    'gaceta' => array('module' => 'frontend','controller' => 'Noticias', 'action' => 'gaceta'),
+    'articulo' => array('module' => 'frontend','controller' => 'Noticias', 'action' => 'articulo'),
 );
 
 /* no eliminar esta linea */
