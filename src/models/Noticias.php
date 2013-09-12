@@ -35,10 +35,17 @@ class Model_Noticias extends Lib_Mvc_Model {
     }
 
     public function getNews($pag) {
-        if($pag == 0){
-            $pag = 1;
-        }
-        $sql =  'SELECT * FROM '.$this->_name.' LIMIT '.($pag - 1).',4';
+        //Número de noticias mostradas por página.
+        $n = 4;
+        $i = ($pag * $n) - $n;
+        $sql =  'SELECT * FROM '.$this->_name.' LIMIT '.$i.','.$n;
+        $db = parent::getDB();
+        $result = $db->query($sql);
+        return parent::toArray($result);
+    }
+
+    public function getArticulo($id) {
+        $sql =  'SELECT * FROM '.$this->_name.' WHERE id='.$id;
         $db = parent::getDB();
         $result = $db->query($sql);
         return parent::toArray($result);

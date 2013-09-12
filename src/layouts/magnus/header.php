@@ -11,7 +11,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="#">
+                    <a class="brand" href="<?php echo HOME ?>/home">
                         <img src="<?php echo HOME; ?>/assets/magnus/img/escudo.png">
                         <span>Juanacatlán</span>
                     </a>

@@ -18,3 +18,14 @@
  .post .post-meta{
  	margin-top: 40px;
  }
+
+ .tags a:hover {
+	background: #9E1929;
+	border: 1px solid white;
+}
+
+.links-list-alt li a:hover{
+	background: #9E1929;
+	color: white;
+	border: 1px solid white;
+}

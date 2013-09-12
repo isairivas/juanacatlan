@@ -27,16 +27,16 @@
 							<div class="row">
 
 								<span class="span3">
-									<div class="post-img picture"><a href="/noticias/id/<?php echo $registro['id']; ?>"><img class="notice"src="<?php echo HOME; ?>/uploads/noticias/heaven.jpg" alt="" /><div class="image-overlay-link"></div></a></div>
+									<div class="post-img picture"><a href="/articulo/id/<?php echo $registro['id']; ?>"><img class="notice"src="<?php echo HOME; ?>/uploads/noticias/heaven.jpg" alt="" /><div class="image-overlay-link"></div></a></div>
 								</span>
 								<span class="span8">
 									<span class="post-icon standard"><i class="ico-bookmark circle"></i></span>
 									<div class="post-content">
-										<div class="post-title"><h2><a href="post.html"><?php echo $registro['titulo']; ?></a></h2></div>
+										<div class="post-title"><h2><a href="/articulo/id/<?php echo $registro['id']; ?>"><?php echo $registro['titulo']; ?></a></h2></div>
 										<div class="post-description">
 											<p>
 												<?php echo $registro['contenido']; ?>
-												<a class="post-entry" href="post.html">Leer más...</a>
+												<a class="post-entry" href="/articulo/id/<?php echo $registro['id']; ?>">Leer más...</a>
 											</p>
 										</div>
 										
