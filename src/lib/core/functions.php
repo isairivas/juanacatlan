@@ -109,14 +109,14 @@ function cutTextWithTags($texto, $longitud = 500) {
         throw new Exception('La longitud es invalida, debe ser un numero entero');
     }
     
-    if ( (mb_strlen($texto) > $longitud ) ) {
-        $pos_espacios = mb_strpos($texto, ' ', $longitud) - 1;
+    if ( (strlen($texto) > $longitud ) ) {
+        $pos_espacios = strpos($texto, ' ', $longitud) - 1;
         if ($pos_espacios > 0) {
-            $caracteres = count_chars(mb_substr($texto, 0, ($pos_espacios + 1)), 1);
+            $caracteres = count_chars(substr($texto, 0, ($pos_espacios + 1)), 1);
             if ( isset($caracteres[ord('<')]) && isset($caracteres[ord('>')]) && $caracteres[ord('<')] > $caracteres[ord('>')]) {
-                $pos_espacios = mb_strpos($texto, ">", $pos_espacios) - 1;
+                $pos_espacios = strpos($texto, ">", $pos_espacios) - 1;
             }
-            $texto = mb_substr($texto, 0, ($pos_espacios + 1));
+            $texto = substr($texto, 0, ($pos_espacios + 1));
         }
         if (preg_match_all("|(<([\w]+)[^>]*>)|", $texto, $buffer)) {
             if (!empty($buffer[1])) {
