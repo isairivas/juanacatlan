@@ -15,7 +15,7 @@ class Model_Noticias extends Lib_Mvc_Model {
         $nombreImagen = '';
         try{
             $nombreImagen = $serverImage->upload('registro','imagen',PATH_UPLOADS_FILES_NOTICIAS);
-            print_r($nombreImagen);
+
            }catch(Exception $e){
                if($e->getCode() == 2 ){
                    return '';
