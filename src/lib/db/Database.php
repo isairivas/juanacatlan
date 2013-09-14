@@ -46,10 +46,11 @@ class Lib_Db_Database {
 	public function queryPrepared($strQueryPrepared,$arrValues){
 		$pdoConexion = $this->getConnect();
 		$objPrepare = $pdoConexion->prepare($strQueryPrepared);
-		foreach( $arrValues as $key => $value ){
-			$objPrepare->bindValue(':'.$key, $value);
-		}
-		$objPrepare->execute();
+		
+		/*foreach( $arrValues as $key => $value){
+			$objPrepare->bindParam(':'.$key, $value);
+		}*/
+		$objPrepare->execute($arrValues);
 		return $objPrepare->fetchAll();
 	}
 	

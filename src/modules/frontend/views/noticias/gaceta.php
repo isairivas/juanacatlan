@@ -6,7 +6,7 @@
 			<!-- start: Container -->
 			<div class="container">
 
-				<h2><i class="ico-bookmark"></i>Noticias</h2>
+				<h2><i class="ico-bookmark"></i>Gaceta</h2>
 
 			</div>
 			<!-- end: Container  -->

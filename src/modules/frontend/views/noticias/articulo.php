@@ -56,19 +56,16 @@
 					<!-- start: Popular Photos -->
 					<div class="widget first">
 						<div class="title"><h3>Últimas Noticias</h3></div>
-						<div class="tags">
-							<a href="#">Tag1</a>
-							<a href="#">Tag2</a>
-							<a href="#">Tag3</a>
-							<a href="#">Tag4</a>
-							<a href="#">Tag5</a>
-							<a href="#">Tag6</a>
-							<a href="#">Tag7</a>
-							<a href="#">Tag8</a>
-							<a href="#">Tag9</a>
-							<a href="#">Tag10</a>
-							<a href="#">Tag11</a>
-							<a href="#">Tag12</a>
+						<div class="row ">
+							<?php foreach ($lastNoticias as $noticia): ?>
+								<div class="span3">
+									
+										<a href="/articulo/id/<?php echo $noticia['id'];?>">
+											<h3><i class="mini-ico-bookmark"></i><?php echo $noticia['titulo'];?></h3>
+										</a>
+									
+								</div>
+							<?php endforeach; ?>
 						</div>
 
 					</div>
