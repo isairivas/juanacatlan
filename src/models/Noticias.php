@@ -15,6 +15,7 @@ class Model_Noticias extends Lib_Mvc_Model {
         $nombreImagen = '';
         try{
             $nombreImagen = $serverImage->upload('registro','imagen',PATH_UPLOADS_FILES_NOTICIAS);
+            print_r($nombreImagen);
            }catch(Exception $e){
                if($e->getCode() == 2 ){
                    return '';
@@ -39,7 +40,7 @@ class Model_Noticias extends Lib_Mvc_Model {
         $n = 4;
         $i = ($pag * $n) - $n;
         $db = parent::getDB();
-        $sql =  'SELECT * FROM '.$this->_name.' LIMIT '.$i.','.$n;
+        $sql =  'SELECT * FROM '.$this->_name.' ORDER BY fecha DESC LIMIT '.$i.','.$n ;
         $db = parent::getDB();
         $result = parent::toArray($db->query($sql));
         return parent::toArray($result);

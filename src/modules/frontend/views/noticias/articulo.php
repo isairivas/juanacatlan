@@ -3,7 +3,7 @@
 		<div id="page-title-inner">
 			<!-- start: Container -->
 			<div class="container">
-				<h2><i class="ico-bookmark"></i>Gaceta</h2>
+				<h2><a href="/gaceta"><i class="ico-bookmark"></i>Gaceta</h2></a>
 			</div>
 			<!-- end: Container  -->
 		</div>	
@@ -23,7 +23,7 @@
 					<div class="post post-page">
 							
 						<div class="post-img picture">
-							<img src="<?php echo HOME; ?>/uploads/noticias/heaven.jpg"  alt="" />
+							<img src="<?php echo HOME; ?>/uploads/noticias/<?php echo $articulo['imagen'];?>"  alt="" />
 						</div>
 						<span class="post-icon standard"><i class="ico-pen circle"></i></span>
 						<div class="post-content">

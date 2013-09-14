@@ -6,7 +6,7 @@
 			<!-- start: Container -->
 			<div class="container">
 
-				<h2><i class="ico-bookmark"></i>Gaceta</h2>
+				<h2><a href="/gaceta"><i class="ico-bookmark"></i>Gaceta</h2></a>
 
 			</div>
 			<!-- end: Container  -->
@@ -27,7 +27,7 @@
 							<div class="row">
 
 								<span class="span3">
-									<div class="post-img picture"><a href="/noticias/id/<?php echo $registro['id']; ?>"><img class="notice"src="<?php echo HOME; ?>/uploads/noticias/heaven.jpg" alt="" /><div class="image-overlay-link"></div></a></div>
+									<div class="post-img picture"><a href="/noticias/id/<?php echo $registro['id']; ?>"><img class="notice"src="<?php echo HOME; ?>/uploads/noticias/<?php echo $registro['imagen'];?>" alt="" /><div class="image-overlay-link"></div></a></div>
 								</span>
 								<span class="span8">
 									<span class="post-icon standard"><i class="ico-bookmark circle"></i></span>

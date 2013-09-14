@@ -64,7 +64,7 @@ class Module_Admin_Controller_Noticias extends Module_Admin_Controller_Parent{
                 }
                    
             } catch(Exception $e) {}
-            parent::redirect('/admin/noticias');
+            //parent::redirect('/admin/noticias');
         }
     }
 
