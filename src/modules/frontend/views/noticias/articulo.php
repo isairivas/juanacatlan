@@ -37,7 +37,7 @@
 							</div>
 							<div class="post-meta">
 								<span>
-									<i class="mini-ico-calendar"></i><?php echo $articulo['fecha'];?> 
+									<i class="mini-ico-calendar"></i><?php echo toDMY($articulo['fecha']);?> 
 								</span>
 								<span>
 									<i class="mini-ico-user"></i>Gobierno de Juanacatlán
@@ -60,7 +60,7 @@
 							<?php foreach ($lastNoticias as $noticia): ?>
 								<div class="span3">
 									
-										<a href="/articulo/id/<?php echo $noticia['id'];?>">
+										<a href="/articulo/id/<?php echo $noticia['id'];?>/<?php echo cleanTitle($noticia['titulo']);?>">
 											<h3><i class="mini-ico-bookmark"></i><?php echo $noticia['titulo'];?></h3>
 										</a>
 									

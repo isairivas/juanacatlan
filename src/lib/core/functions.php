@@ -133,3 +133,14 @@ function cutTextWithTags($texto, $longitud = 500) {
     }
     return $texto;
     }
+
+    function cleanTitle($title){
+        $title = str_replace(' ', '-', $title);
+        $title = str_replace('_', '-', $title);
+        $title = preg_replace("/[^a-zA-Z\-\-0-9]/", "",$title);
+        return $title;
+    }
+    
+    function toDMY($fecha){
+    	return date('d/m/Y', strtotime($fecha));
+    }

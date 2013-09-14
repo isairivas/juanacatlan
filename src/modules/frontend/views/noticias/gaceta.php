@@ -27,12 +27,12 @@
 							<div class="row">
 
 								<span class="span3">
-									<div class="post-img picture"><a href="/articulo/id/<?php echo $registro['id']; ?>"><img class="notice"src="<?php echo HOME; ?>/uploads/noticias/<?php echo $registro['imagen'];?>" alt="" /><div class="image-overlay-link"></div></a></div>
+									<div class="post-img picture"><a href="/articulo/id/<?php echo $registro['id']; ?>/<?php echo cleanTitle($registro['titulo']);?>"><img class="notice"src="<?php echo HOME; ?>/uploads/noticias/<?php echo $registro['imagen'];?>" alt="" /><div class="image-overlay-link"></div></a></div>
 								</span>
 								<span class="span8">
 									<span class="post-icon standard"><i class="ico-bookmark circle"></i></span>
 									<div class="post-content">
-										<div class="post-title"><h2><a href="/articulo/id/<?php echo $registro['id']; ?>"><?php echo $registro['titulo']; ?></a></h2></div>
+										<div class="post-title"><h2><a href="/articulo/id/<?php echo $registro['id']; ?>/<?php echo cleanTitle($registro['titulo']);?>"><?php echo $registro['titulo']; ?></a></h2></div>
 										<div class="post-description">
 											<p>
 												<?php echo $registro['contenido']; ?>
@@ -42,7 +42,7 @@
 										
 										<div class="post-meta">
 											<span>
-												<i class="mini-ico-calendar"></i><?php echo $registro['fecha']; ?>
+												<i class="mini-ico-calendar"></i><?php echo toDMY($registro['fecha']); ?>
 											</span> 
 
 											<span>
