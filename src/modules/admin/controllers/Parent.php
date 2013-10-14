@@ -44,11 +44,14 @@ class Module_Admin_Controller_Parent extends Lib_Mvc_Controller {
         $transparencia = new Lib_View_Component_Menu('Transparencia','','icon-eye-open',true);
         $transparencia->addChild(new Lib_View_Component_Menu('Transparencia', '/admin/transparencia/', 'icol-doc-tag'));
         
+        $eventos = new Lib_View_Component_Menu('Eventos', '', 'icon-calendar-month', true);
+        $eventos->addChild(NEW Lib_View_Component_Menu('Eventos', '/admin/eventos', 'icol-calendar-1'));
+
         $menus = array();
         if(isset($_SESSION['linker_security'])){
             switch($_SESSION['linker_security']['rol']){
                 case '1':
-                    $menus = array($contenido,$transparencia);
+                    $menus = array($contenido,$transparencia, $eventos);
                     break;
                 case '2':
                     $menus = array($contenido);

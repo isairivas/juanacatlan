@@ -18,8 +18,8 @@ define('PROYECT_NAME','nombre del proyecto');
 /* constantes donde se definen los valores de la base de datos */
 define('DB_SERVER', 'localhost');
 define('DB_USER','root');
-define('DB_PASSWORD','123456');
-define('DB_NAME','juana');
+define('DB_PASSWORD','PlTwI6df');
+define('DB_NAME','juanacatlan');
 
 
 /* configuracion donde se definen si se muestra los errores y warnigs o se ocultan */

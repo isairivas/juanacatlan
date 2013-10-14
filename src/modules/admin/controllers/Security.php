@@ -27,6 +27,7 @@ class Module_Admin_Controller_Security extends Module_Admin_Controller_Parent {
                 
                 /* buscar si existe el usuario */
                 foreach($usuarios as $user){
+
                     if($user['usuario'] == $usuario && $user['password'] ==  $password ){
                         $encontrado = true;
                         $_SESSION['linker_security'] = array(

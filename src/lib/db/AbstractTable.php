@@ -81,8 +81,6 @@ class  Lib_Db_AbstractTable {
 		}
 		$query .= ' ); ';
 		
-		
-		
 		if ( $this->db->exec($query) ){
 			
 			return $this->db->lastInsert();

@@ -28,7 +28,7 @@
                                 </ul>
                             </li>
                             <li class="<?php echo Application::get('menu-active') == '4' ? 'active' : ''; ?>"><a href="<?php echo HOME; ?>/gaceta/1">Gaceta</a></li>
-                            <li><a href="#">Eventos</a></li>
+                            <li class="<?php echo Application::get('menu-active') == '' ? 'active' : ''; ?>"><a href="<?php echo HOME; ?>/eventos">Eventos</a></li>
                             <li><a href="#">Contacto</a></li>
                         </ul>
                     </div>

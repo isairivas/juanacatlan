@@ -35,6 +35,7 @@ class Application {
         }
 
         $this->initAutoload();
+        date_default_timezone_set('America/Mexico_City'); 
         self::$view = new Lib_Mvc_View();
     }
 
