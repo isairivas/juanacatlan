@@ -29,6 +29,13 @@
 	color: white;
 	border: 1px solid white;
 }
-a{
-	color: #9E1929;
+
+#filters a:hover, .selected {
+	border-bottom-color : #9E1929 !important;
+	color: #9E1929 !important;
+}
+
+#filters{
+	margin-left: 25%;
+	margin-bottom: 5px;
 }

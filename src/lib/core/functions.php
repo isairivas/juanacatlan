@@ -26,7 +26,6 @@ function go($section,$action,$params=''){
 	return "index.php?section={$section}&action={$action}{$params}";
 }
 
-
 /* 
 * convierte a float cualquier numero entero
 */
@@ -132,15 +131,46 @@ function cutTextWithTags($texto, $longitud = 500) {
         }
     }
     return $texto;
-    }
+}
+/*
+ * Returns the month of a given date, if date == null returns the current month.
+ */
+/*function getMonth($date = null){
 
-    function cleanTitle($title){
-        $title = str_replace(' ', '-', $title);
-        $title = str_replace('_', '-', $title);
-        $title = preg_replace("/[^a-zA-Z\-\-0-9]/", "",$title);
-        return $title;
-    }
-    
-    function toDMY($fecha){
-    	return date('d/m/Y', strtotime($fecha));
+	$months = monthsValues();
+	if (!$date) {
+		$date = date("Y-m-d");
+		$d = date_parse_from_format("Y-m-d", $date);
+		return $months[$d["month"]];
+	} else {
+		$d = date_parse_from_format("Y-m-d", $date);	
+		return $months[$d["month"]];
+	}
+}
+*/
+function getYear() {
+	$d = date_parse_from_format("Y-m-d", date("Y-m-d"));
+	return $d["year"];
+}
+
+function getMonth($m = null){
+	$months = array( 1 => 'Enero', 2 => 'Febrero', 3 => 'Marzo', 4 => 'Abril',
+                 5 => 'Mayo',     6 => 'Junio',     7 => 'Julio',  8 => 'Agosto',
+                 9 => 'Septiembre', 10 => 'Octubre', 11 => 'Noviembre', 12 => 'Diciembre');
+	if ($m) {
+		return $months[$m];	
+	} else {
+		return $months;
+	}
+}
+
+function cleanTitle($title){
+    $title = str_replace(' ', '-', $title);
+    $title = str_replace('_', '-', $title);
+    $title = preg_replace("/[^a-zA-Z\-\-0-9]/", "",$title);
+    return $title;
+}
+
+function toDMY($fecha){
+	return date('d/m/Y', strtotime($fecha));
     }

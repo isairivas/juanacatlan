@@ -16,4 +16,12 @@ class Model_Eventos extends Lib_Mvc_Model {
         $result = $db->query($sql);
         return parent::toArray($result);
     }
+
+    public function getMonth($month) {
+    	
+    	$sql = 'SELECT * FROM eventos WHERE mes = '. $month;
+    	$db = parent::getDB();
+        $result = $db->query($sql);
+        return parent::toArray($result);
+    }
 }
