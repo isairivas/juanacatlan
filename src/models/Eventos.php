@@ -17,11 +17,20 @@ class Model_Eventos extends Lib_Mvc_Model {
         return parent::toArray($result);
     }
 
-    public function getMonth($month) {
-    	
-    	$sql = 'SELECT * FROM eventos WHERE mes = '. $month;
+    public function getMonth($year, $month) {
+    	$from = $year .'-'.$month.'-01';
+        $to = $year .'-'.$month.'-31';
+    	$sql = 'SELECT * FROM eventos WHERE fecha BETWEEN "'.$from.'" AND "'.$to.'" ORDER BY fecha';
     	$db = parent::getDB();
         $result = $db->query($sql);
+        return parent::toArray($result);
+    }
+
+    public function getEvento($id){
+        $sql =  'SELECT * FROM eventos WHERE id = :id';
+        $arr = array('id' => $id);
+        $db = parent::getDB();
+        $result = $db->queryPrepared($sql, $arr);
         return parent::toArray($result);
     }
 }

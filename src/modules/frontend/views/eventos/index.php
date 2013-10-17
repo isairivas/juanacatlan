@@ -5,9 +5,7 @@
 
 			<!-- start: Container -->
 			<div class="container">
-
-				<h2><i class="ico-birthday-cake"></i>Eventos</h2>
-
+				<h2><i class="ico-birthday-cake"></i><?php echo $año; ?></h2>
 			</div>
 			<!-- end: Container  -->
 
@@ -24,20 +22,27 @@
 			<div class="span7" id="filters">
 				<ul data-option-key="filter">
 					<?
+					echo '<li>
+							<a href="/eventos/'.($año-1).'/1" >'.($año-1).'</a>
+						</li>
+						<li>/</li>';
 					$cont = 1;
 					foreach ($meses as $key){
-						if($cont == $actual){
-							echo '<li><a href="/eventos/'.$cont.'" class="selected">'.$key.'</a></li>
+						if($cont == $mes){
+							echo '<li><a href="/eventos/'.$año.'/'.$cont.'" class="selected">'.$key.'</a></li>
 								<li>/</li>';
 						} else {
-							echo '<li><a href="/eventos/'.$cont.'" >'.$key.'</a></li>
+							echo '<li><a href="/eventos/'.$año.'/'.$cont.'" >'.$key.'</a></li>
 								<li>/</li>';
 						}
 						$cont++;
-					}?>
+					}
+					echo '<li><a href="/eventos/'.($año+1).'/1" >'.($año+1).'</a></li>';
+					?>
+
 				</ul>
 			</div>
-
+	<a href=""></a>
 		</div>
 		<!-- start: Portfolio -->
 		<div class="container">
@@ -46,17 +51,22 @@
 				if (empty($eventos)) {
 					echo '<div class="alert alert-error span11">
 					<strong>:(</strong>
-					Este mes aún no tiene eventos.
+					Aún no hay eventos en este mes.
 					</div>';
 				} else {
 					foreach ($eventos as $evento): ?>
 					<div class="span4 portfolio-item nature people">
 						<span><i class="mini-ico-bookmark"></i><?php echo toDMY($evento['fecha']); ?></span>
-						<div class="picture"><a href="project.html" title="Title"><img src="img/photo1.jpg" alt=""/><div class="image-overlay-link"></div></a>
-							<div class="post-meta"><?php echo $evento['nombre']; ?></div>
+						<div class="picture">
+							<a href="/evento/<?php echo $evento['id']; ?>" title="<?php echo $evento['nombre']; ?>">
+								<img src="img/photo1.jpg" alt=""/><div class="image-overlay-link"></div>
+							</a>
 							<div class="item-description alt">
+								
+								<h5><a href=""><?php echo $evento['nombre']; ?></a></h5>
+								
 								<p>
-									<?php echo $evento['fecha']; ?>
+									<?php echo cutTextWithTags($evento['descripcion']).'...'; ?>
 								</p>
 							</div>
 						</div>					

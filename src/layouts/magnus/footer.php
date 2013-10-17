@@ -151,7 +151,7 @@
         
             <div class="sixteen columns">
                 <p>
-                    &copy; 2013
+                    &copy; <?php echo getYear();?>
                 </p>
             </div>
 

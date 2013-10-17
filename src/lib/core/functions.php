@@ -132,22 +132,7 @@ function cutTextWithTags($texto, $longitud = 500) {
     }
     return $texto;
 }
-/*
- * Returns the month of a given date, if date == null returns the current month.
- */
-/*function getMonth($date = null){
 
-	$months = monthsValues();
-	if (!$date) {
-		$date = date("Y-m-d");
-		$d = date_parse_from_format("Y-m-d", $date);
-		return $months[$d["month"]];
-	} else {
-		$d = date_parse_from_format("Y-m-d", $date);	
-		return $months[$d["month"]];
-	}
-}
-*/
 function getYear() {
 	$d = date_parse_from_format("Y-m-d", date("Y-m-d"));
 	return $d["year"];

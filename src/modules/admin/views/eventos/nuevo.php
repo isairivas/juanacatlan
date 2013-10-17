@@ -27,9 +27,9 @@
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label" for="descripcion">Descripción del Evento </label>
+                            <label for="contenido">Descripción</label>
                             <div class="controls">
-                                <textarea  name="registro[descripcion]" class="span9" id="registro[descripcion]" rows="2"><?php echo isset($registro['descripcion']) ? $registro['descripcion'] : ''; ?></textarea>
+                                <textarea id="input" name="registro[descripcion]" style="width: 100%; height: 250px;"><?php echo isset($registro['descripcion'])?$registro['descripcion']:''; ?></textarea>
                             </div>
                         </div>
 

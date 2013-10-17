@@ -52,8 +52,6 @@ class Module_Admin_Controller_Eventos extends Module_Admin_Controller_Parent{
             $registro = $_POST['registro'];
             $registro['fecha'] = Lib_Util_Date::formatTo('Y-m-d', $registro['fecha']);
             $d = date_parse_from_format("Y-m-d", $registro['fecha'] );
-            $registro['mes'] = $d['month'];
-
             try{
                 $this->model->insert($registro);
             }catch(Exception $e){
