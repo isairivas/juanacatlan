@@ -41,19 +41,37 @@ class Module_Admin_Controller_Eventos extends Module_Admin_Controller_Parent{
         );
         Application::set('navegation',$navegacion);
         Application::set('view-subtitle', 'Nuevo Evento');
-
+        $registro = array(array(
+            'nombre' => '','fecha' => '','descripcion' => ''
+        ));
+        if(isset($_GET['id']) && is_numeric($_GET['id'])){
+            $id = $_GET['id'];
+            $registro = $this->model->toArray($this->model->getByPrimary($id));
+            $registro[0]['fecha'] = Lib_Util_Date::formatTo('d/m/Y', $registro[0]['fecha']);
+        }
         $data = array(
-            'action'     => '/admin/eventos/nuevo'
+            'action'     => '/admin/eventos/nuevo',
+            'registro'   => $registro[0]
         );
         Application::$view->setData($data);
 
         if($_SERVER['REQUEST_METHOD'] == 'POST' ){
-
             $registro = $_POST['registro'];
             $registro['fecha'] = Lib_Util_Date::formatTo('Y-m-d', $registro['fecha']);
             $d = date_parse_from_format("Y-m-d", $registro['fecha'] );
+            $registro['imagen'] = $this->model->uploadImagen();
+            if(!$registro['imagen']){
+                unset($registro['imagen']);
+            }
             try{
-                $this->model->insert($registro);
+                if(isset($registro['id']) && is_numeric($registro['id'])){
+                    $id = $registro['id'];
+                    unset($registro['id']);
+                    $this->model->update($registro, " WHERE id = {$id} ");
+                } else {
+                    $this->model->insert($registro);
+                }
+                
             }catch(Exception $e){
             }
             parent::redirect('/admin/eventos');
@@ -64,6 +82,7 @@ class Module_Admin_Controller_Eventos extends Module_Admin_Controller_Parent{
         Application::setRenderView(false);
         if(isset($_GET['id']) && filter_var($_GET['id'],FILTER_VALIDATE_INT) ){
             $id = $_GET['id'];
+            $this->model->eliminaAntiguaImagen('true', $id);
             try{
                $this->model->deleteByPrimary($id);
            }catch(Exception $e){ dump($e->getMessage()); }

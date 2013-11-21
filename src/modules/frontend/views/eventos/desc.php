@@ -23,7 +23,7 @@
 					<div class="post post-page">
 							
 						<div class="post-img picture">
-							<img src="<?php echo HOME; ?>/uploads/evnetos"  alt="" />
+							<img src="<?php echo HOME; ?>/uploads/eventos/<?php echo $evento['imagen']; ?>"  alt="" />
 						</div>
 						<span class="post-icon standard"><i class="ico-pen circle"></i></span>
 						<div class="post-content">

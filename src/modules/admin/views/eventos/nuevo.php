@@ -26,6 +26,18 @@
                                 <p class="help-block"></p>
                             </div>
                         </div>
+                        
+                        <div class="control-group">
+                            <label class="control-label" for="imagen">Imagen</label>
+                            <div class="controls">
+                                <?php if(isset($registro['imagen']) && !empty($registro['imagen']) ): ?>
+                                <div class="image-thumb-admin"> <img src="<?php echo HOME; ?>/uploads/eventos/<?php echo $registro['imagen']; ?>" /></div>
+                                <?php endif; ?>
+                                <input type="file" name="registro[imagen]" data-provide="fileinput" />
+                                <p class="help-block"> Tama&ntilde;o Maximo: 2 Mg </p>
+                            </div>
+                        </div>
+                        
                         <div class="control-group">
                             <label for="contenido">Descripción</label>
                             <div class="controls">
@@ -47,4 +59,7 @@
             window.history.back();
             return false;
         }
+        jQuery(document).ready(function(){
+            jQuery('.date-picker').datepicker();
+        });
         </script>

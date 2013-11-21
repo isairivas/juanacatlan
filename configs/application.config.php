@@ -18,7 +18,7 @@ define('PROYECT_NAME','nombre del proyecto');
 /* constantes donde se definen los valores de la base de datos */
 define('DB_SERVER', 'localhost');
 define('DB_USER','root');
-define('DB_PASSWORD','PlTwI6df');
+define('DB_PASSWORD','');
 define('DB_NAME','juanacatlan');
 
 
@@ -31,3 +31,4 @@ define('SHOW_DETAILS',false);
 /* configuraciones del path para los archivos */
 define('PATH_UPLOADS_FILES_TRANSPARENCIA', PATH_APP . '/../uploads/transparencia/');
 define('PATH_UPLOADS_FILES_NOTICIAS', PATH_APP . '/../uploads/noticias/');
+define('PATH_UPLOADS_FILES_EVENTOS', PATH_APP . '/../uploads/eventos/');

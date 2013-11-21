@@ -59,7 +59,7 @@
 						<span><i class="mini-ico-bookmark"></i><?php echo toDMY($evento['fecha']); ?></span>
 						<div class="picture">
 							<a href="/evento/<?php echo $evento['id']; ?>" title="<?php echo $evento['nombre']; ?>">
-								<img src="img/photo1.jpg" alt=""/><div class="image-overlay-link"></div>
+								<img src="<?php echo HOME; ?>/uploads/eventos/<?php echo $evento['imagen']; ?>" alt=""/><div class="image-overlay-link"></div>
 							</a>
 							<div class="item-description alt">
 								

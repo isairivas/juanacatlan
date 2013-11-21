@@ -33,4 +33,27 @@ class Model_Eventos extends Lib_Mvc_Model {
         $result = $db->queryPrepared($sql, $arr);
         return parent::toArray($result);
     }
+    public function uploadImagen(){
+        $serverImage = new Lib_Util_ServerImage();
+        $nombreImagen = '';
+        try{
+            $nombreImagen = $serverImage->upload('registro','imagen',PATH_UPLOADS_FILES_EVENTOS);
+
+           }catch(Exception $e){
+               if($e->getCode() == 2 ){
+                   return false;
+               }
+           }
+           return $nombreImagen;
+    }
+    public function eliminaAntiguaImagen($fileName, $id) {
+        $antiguoRegistro = $this->toArray($this->getByPrimary($id));
+        $imagen = $antiguoRegistro[0]['imagen'];
+        if (!empty($fileName)) {
+            $antiguoRegistro = $this->toArray($this->getByPrimary($id));
+            @unlink( PATH_UPLOADS_FILES_EVENTOS . $antiguoRegistro[0]['imagen']);
+            $imagen = $fileName;
+        }
+        return $imagen;
+    }
 }
